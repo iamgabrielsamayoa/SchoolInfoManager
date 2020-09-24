@@ -11,107 +11,107 @@ using SchoolInfoShared.Models;
 
 namespace SchoolInfoManager.Controllers
 {
-    public class CursoesController : Controller
+    public class AlumnoController : Controller
     {
-        private SchoolContext db = new SchoolContext();
+        private Context db = new Context();
 
-        // GET: Cursoes
+        // GET: Alumno
         public ActionResult Index()
         {
-            return View(db.Cursos.ToList());
+            return View(db.Alumnos.ToList());
         }
 
-        // GET: Cursoes/Details/5
+        // GET: Alumno/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Curso curso = db.Cursos.Find(id);
-            if (curso == null)
+            Alumno alumno = db.Alumnos.Find(id);
+            if (alumno == null)
             {
                 return HttpNotFound();
             }
-            return View(curso);
+            return View(alumno);
         }
 
-        // GET: Cursoes/Create
+        // GET: Alumno/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Cursoes/Create
+        // POST: Alumno/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CursoId,NombreCurso,Creditos")] Curso curso)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Email,Carne")] Alumno alumno)
         {
             if (ModelState.IsValid)
             {
-                db.Cursos.Add(curso);
+                db.Alumnos.Add(alumno);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(curso);
+            return View(alumno);
         }
 
-        // GET: Cursoes/Edit/5
+        // GET: Alumno/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Curso curso = db.Cursos.Find(id);
-            if (curso == null)
+            Alumno alumno = db.Alumnos.Find(id);
+            if (alumno == null)
             {
                 return HttpNotFound();
             }
-            return View(curso);
+            return View(alumno);
         }
 
-        // POST: Cursoes/Edit/5
+        // POST: Alumno/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CursoId,NombreCurso,Creditos")] Curso curso)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Email,Carne")] Alumno alumno)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(curso).State = EntityState.Modified;
+                db.Entry(alumno).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(curso);
+            return View(alumno);
         }
 
-        // GET: Cursoes/Delete/5
+        // GET: Alumno/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Curso curso = db.Cursos.Find(id);
-            if (curso == null)
+            Alumno alumno = db.Alumnos.Find(id);
+            if (alumno == null)
             {
                 return HttpNotFound();
             }
-            return View(curso);
+            return View(alumno);
         }
 
-        // POST: Cursoes/Delete/5
+        // POST: Alumno/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Curso curso = db.Cursos.Find(id);
-            db.Cursos.Remove(curso);
+            Alumno alumno = db.Alumnos.Find(id);
+            db.Alumnos.Remove(alumno);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

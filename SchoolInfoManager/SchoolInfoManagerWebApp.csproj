@@ -168,11 +168,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AlumnosController.cs" />
-    <Compile Include="Controllers\CursoesController.cs" />
+    <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProfesorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,21 +238,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Alumnos\Create.cshtml" />
-    <Content Include="Views\Alumnos\Delete.cshtml" />
-    <Content Include="Views\Alumnos\Details.cshtml" />
-    <Content Include="Views\Alumnos\Edit.cshtml" />
-    <Content Include="Views\Alumnos\Index.cshtml" />
-    <Content Include="Views\Profesors\Create.cshtml" />
-    <Content Include="Views\Profesors\Delete.cshtml" />
-    <Content Include="Views\Profesors\Details.cshtml" />
-    <Content Include="Views\Profesors\Edit.cshtml" />
-    <Content Include="Views\Profesors\Index.cshtml" />
-    <Content Include="Views\Cursoes\Create.cshtml" />
-    <Content Include="Views\Cursoes\Delete.cshtml" />
-    <Content Include="Views\Cursoes\Details.cshtml" />
-    <Content Include="Views\Cursoes\Edit.cshtml" />
-    <Content Include="Views\Cursoes\Index.cshtml" />
+    <Content Include="Views\Alumno\Create.cshtml" />
+    <Content Include="Views\Alumno\Delete.cshtml" />
+    <Content Include="Views\Alumno\Details.cshtml" />
+    <Content Include="Views\Alumno\Edit.cshtml" />
+    <Content Include="Views\Alumno\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -273,13 +261,13 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SchoolInfo1Shared\SchoolBusinessLayout.csproj">
+      <Project>{f8f86422-2c2f-450e-8bce-b611fee140db}</Project>
+      <Name>SchoolBusinessLayout</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SchoolInfoManagerConsole\SchoolInfoManagerConsole.csproj">
       <Project>{062b803e-268f-4103-bab1-87708e181ec6}</Project>
       <Name>SchoolInfoManagerConsole</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SchoolInfoShared\SchoolInfoShared.csproj">
-      <Project>{ac1a456f-866b-4b73-ab65-668e74eaa81c}</Project>
-      <Name>SchoolInfoShared</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
